@@ -26,7 +26,7 @@ namespace UnityExplorer
 
         public static IExplorerLoader Loader { get; private set; }
         public static string ExplorerFolder => Path.Combine(Loader.ExplorerFolderDestination, Loader.ExplorerFolderName);
-        public const string DEFAULT_EXPLORER_FOLDER_NAME = "CinematicUnityExplorer";
+        public static string DEFAULT_EXPLORER_FOLDER_NAME { get; } = Path.GetFileName(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
         public static HarmonyLib.Harmony Harmony { get; } = new HarmonyLib.Harmony(GUID);
 
